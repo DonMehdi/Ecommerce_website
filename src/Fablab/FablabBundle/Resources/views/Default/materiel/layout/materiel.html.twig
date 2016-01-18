@@ -1,0 +1,58 @@
+{% extends '::layout/layout.html.twig' %}
+
+{% block body %}
+    <div class="span3">
+        {% include '::modulesUsed/navigation.html.twig' %}
+       {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+           {% include 'UtilisateursUtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+       {% else %}
+           {% include 'UtilisateursUtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+        {% endif %}
+           {#{% include '::modulesUsed/utilisateurs.html.twig' %}#}
+    </div>
+
+    <div class="span9">
+        {% if(produits|length != 0) %}
+
+        <ul class="thumbnails">
+            {% for produits in produits %}
+                <li class="span3">
+                    <div class="thumbnail">
+                        {#<img src="{{ asset('/img/logo.jpg')}}" alt="DonMehdi" width="300" height="300'">#}
+                        <img src="{{ produits.image.path }}" alt="DonMehdi" width="250" height="180'">
+                        <div class="caption">
+                            <h4>{{ produits.nom }}</h4>
+
+                            <p>{{ produits.prix  }} €</p>
+                            {#|tva(produit.tva.multiplicate)#}
+
+                            <a class="btn btn-primary" href="{{ path("fablab_fablab_presentation",{'id': produits.id}) }}">Plus d'infos</a>
+                            <a class="btn btn-success" href="{{ path('fablab_fablab_ajouter',{'id':produits.id}) }}">ajouter au panier</a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+
+
+        <div class="pagination">
+            <ul>
+                <li class="disabled"><span>Pr�c�dent</span></li>
+                <li class="disabled"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">Suivant</a></li>
+            </ul>
+        </div>
+    {% else %}
+        <div class="">
+            Le produit que vous cherchez n' existe pas
+        </div>
+
+        {% endif %}
+
+        </div>
+{% endblock %}

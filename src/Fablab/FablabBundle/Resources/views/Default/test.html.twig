@@ -1,0 +1,28 @@
+{#{% for produits in produits %}#}
+{#<section>#}
+{#<ul>#}
+    {#<li>#}
+        {#Nom du legume: {{ produits.nom }}#}
+    {#</li>#}
+    {#<br>#}
+    {#<li>#}
+        {#Le Prix: {{ produits.prix }}#}
+        {#<br>#}
+    {#</li>#}
+
+{#</ul>#}
+{#</section>#}
+{#{% endfor %}#}
+<html>
+
+<body>
+<form action="{{ path("fablab_fablab_test") }}" method="post">
+
+    {{ form(form) }}
+
+</form>
+</body>
+
+
+</html>
+

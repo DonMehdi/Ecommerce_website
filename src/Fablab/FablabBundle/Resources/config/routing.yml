@@ -1,0 +1,38 @@
+fablab_fablab_materiel:
+    path:     /
+    defaults: { _controller: FablabFablabBundle:Produits:index }
+
+fablab_fablab_test:
+    path:     /test
+    defaults: {_controller:  FablabFablabBundle:Test:testFormulaire}
+
+
+fablab_fablab_panier:
+    path:     /panier
+    defaults: { _controller: FablabFablabBundle:Panier:panier }
+
+fablab_fablab_livraison:
+    path:     /livraison
+    defaults: { _controller: FablabFablabBundle:Panier:livraison}
+
+fablab_fablab_validation:
+    path:     /validation
+    defaults: { _controller: FablabFablabBundle:Panier:validation}
+
+categorieProduits:
+    path:     /categorie/{id}
+    defaults:  {_controller: FablabFablabBundle:Produits:categorie}
+
+rechercheProduits:
+    path:     /recherche
+    defaults:  {_controller: FablabFablabBundle:Produits:rechercheTraitement}
+
+fablab_fablab_presentation:
+    path:     /presentation/{id}
+    defaults:  {_controller: FablabFablabBundle:Produits:presentation }
+fablab_fablab_ajouter:
+    path:     /ajouter/{id}
+    defaults:  {_controller: FablabFablabBundle:Panier:ajouter}
+fablab_fablab_supprimer:
+    path:     /supprimer/{id}
+    defaults:  {_controller: FablabFablabBundle:Panier:supprimer}

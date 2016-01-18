@@ -1,0 +1,10 @@
+pages_pages_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PagesPagesBundle:Pages:page }
+pages_pages_menu:
+    path:     /menu
+    defaults: {_controller:  PagesPagesBundle:Pages:menu}
+
+pages_pages_page:
+    path:     /page/{id}
+    defaults: {_controller:  PagesPagesBundle:Pages:page}

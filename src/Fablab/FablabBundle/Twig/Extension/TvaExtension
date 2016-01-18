@@ -1,0 +1,25 @@
+<?php
+namespace Fablab\FablabBundle\Twig\Extension;
+
+class TvaExtension extends \Twig_Extension
+{
+
+    public function getFilters()
+    {
+        return array(new \Twig_SimpleFilter('tva', array($this,'calculTva')));
+    }
+    /**
+     * Returns the name of the extension.
+     *
+     * @return string The extension name
+     */
+     function calculTva($prixht, $tva)
+    {
+        return round($prixht/$tva,2);
+    }
+    public function getName()
+    {
+        // TODO: Implement getName() method.
+        return 'tva_extension';
+    }
+}

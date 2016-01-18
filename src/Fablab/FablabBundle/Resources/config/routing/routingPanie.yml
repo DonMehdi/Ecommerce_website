@@ -1,0 +1,10 @@
+
+fablab_fablab_panier:
+    path:     /
+    defaults: { _controller: FablabFablabBundle:Panier:panier }
+fablab_fablab_livraison:
+    path:     /livraison
+    defaults: { _controller: FablabFablabBundle:Panier:livraison}
+fablab_fablab_validation:
+    path:     /validation
+    defaults: { _controller: FablabFablabBundle:Panier:validation}
